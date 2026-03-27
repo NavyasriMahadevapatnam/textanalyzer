@@ -1,5 +1,6 @@
-import { auth } from './firebase-config.js';
+import { auth, db } from './firebase-config.js';
 import { createUserWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
 document.getElementById('signup-form').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -32,6 +33,13 @@ document.getElementById('signup-form').addEventListener('submit', async function
         // Add the Name to the Firebase user profile
         await updateProfile(userCredential.user, {
             displayName: name
+        });
+
+        // Store additional details in Firestore
+        await setDoc(doc(db, "users", userCredential.user.uid), {
+            name: name,
+            email: email,
+            createdAt: new Date().toISOString()
         });
 
         // Account created successfully
