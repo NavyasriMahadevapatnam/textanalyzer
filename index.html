@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Text Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "firebase/app": "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js",
+          "firebase/analytics": "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js",
+          "firebase/auth": "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
+        }
+      }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Text Analyzer</h1>
+            <p>A simple tool to analyze your text</p>
+            <div class="header-actions">
+                <button id="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <textarea id="text-input" placeholder="Type or paste your text here to analyze..."></textarea>
+                <div class="actions">
+                    <button id="clear-btn">Clear Text</button>
+                    <button id="uppercase-btn">UPPERCASE</button>
+                    <button id="lowercase-btn">lowercase</button>
+                    <button id="fix-spelling-btn">Fix Typos</button>
+                    <button id="copy-btn">Copy Text</button>
+                    <button id="speak-btn">Read Aloud</button>
+                    <button id="stop-btn">Stop Reading</button>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div class="stat-box">
+                    <h3>Words</h3>
+                    <p id="word-count">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Characters</h3>
+                    <p id="char-count">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Characters (No Spaces)</h3>
+                    <p id="char-nospace-count">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Sentences</h3>
+                    <p id="sentence-count">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Paragraphs</h3>
+                    <p id="paragraph-count">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Reading Time</h3>
+                    <p id="reading-time">0 min</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Longest Word</h3>
+                    <p id="longest-word">-</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Created for my FSD Project</p>
+        </footer>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

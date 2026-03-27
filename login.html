@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - Interactive Text Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "firebase/app": "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js",
+          "firebase/analytics": "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js",
+          "firebase/auth": "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"
+        }
+      }
+    </script>
+</head>
+<body>
+    <div class="container auth-container">
+        <header>
+            <h1>Text Analyzer</h1>
+            <p>Welcome back! Please log in.</p>
+        </header>
+        <main>
+            <form id="login-form" class="auth-form">
+                <div id="login-error" class="error-message"></div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter password">
+                </div>
+                <button type="submit" class="auth-button">Log In</button>
+            </form>
+            <div class="auth-links">
+                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="login.js"></script>
+</body>
+</html>
